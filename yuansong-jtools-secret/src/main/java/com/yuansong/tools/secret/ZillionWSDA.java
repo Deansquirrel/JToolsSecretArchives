@@ -42,7 +42,7 @@ private static final Logger logger = LoggerFactory.getLogger(ZillionWSDA.class);
 		byte[] hexMd5 = this.hexStr2Bytes(sMd5) ;	
 		
 		byte[] resultByte = this.byteMerger(hexMd5,sPlain);
-		byte[] keyByte = key.getBytes();
+		byte[] keyByte = key.getBytes("GBK");
 		
 		for(int i=0;i<resultByte.length;i++) {
 			resultByte[i] = this.getXor(resultByte[i], keyByte[i % keyByte.length]);
@@ -82,7 +82,7 @@ private static final Logger logger = LoggerFactory.getLogger(ZillionWSDA.class);
 			resultByte[i] = this.getXor(resultByte[i], rndKey[i % rndKey.length]);
 		}
 		
-		byte[] keyByte = key.getBytes("UTF-8");
+		byte[] keyByte = key.getBytes("GBK");
 		for(int i = 0; i < resultByte.length; i++) {
 			resultByte[i] = this.getXor(resultByte[i], keyByte[i % keyByte.length]);
 		}
