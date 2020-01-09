@@ -4,7 +4,7 @@
 
   <groupId>com.yuansong.tools</groupId>
   <artifactId>yuansong-jtools-secret</artifactId>
-  <version>0.0.0</version>
+  <version>0.0.1</version>
   <packaging>jar</packaging>
 
   <name>yuansong-jtools-secret</name>
@@ -14,6 +14,13 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <github.global.server>github</github.global.server>
   </properties>
+  
+  <repositories>
+    <repository>
+        <id>deansquirrel-maven-repo-release</id>
+        <url>https://gitee.com/deansquirrel/maven-jrepository/raw/master</url>
+    </repository>
+  </repositories>
 
   <dependencies>
     <dependency>
@@ -22,12 +29,20 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    
+    <!-- 第三方 Begin -->
     <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
         <version>1.7.30</version>
     </dependency>
+    <!-- 第三方 End -->
+    <!-- 自定义 Begin -->
+    <dependency>
+        <groupId>com.yuansong.tools</groupId>
+        <artifactId>yuansong-jtools-common</artifactId>
+        <version>0.0.6</version>
+    </dependency>
+    <!-- 自定义 End -->
   </dependencies>
   
   <build>
@@ -84,6 +99,7 @@
                 </execution>
             </executions>
         </plugin>
+        <!-- 
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
@@ -97,6 +113,7 @@
                 </execution>
             </executions>
         </plugin>
+         -->
     </plugins>
   </build>
 </project>
