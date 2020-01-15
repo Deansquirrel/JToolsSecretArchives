@@ -108,7 +108,7 @@ private static final Logger logger = LoggerFactory.getLogger(ZillionWSDA.class);
 			throw new Exception("解密失败。（校验错误）");
 		}
 		
-		logger.debug(new String(plainByte, "GBK"));
+//		logger.debug(new String(plainByte, "GBK"));
 		return new String(plainByte, "GBK");
 	}
 	
